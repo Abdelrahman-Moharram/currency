@@ -40,7 +40,6 @@ class UserAccountManager(BaseUserManager):
         return user
 
 class Role(BaseModel):
-    id                  = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name                = models.CharField(max_length=255)
     objects = BaseModelManager()
 
@@ -49,7 +48,6 @@ class Role(BaseModel):
         return self.name
 
 class User(AbstractBaseUser, PermissionsMixin):
-    id                  = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     username            = models.CharField(max_length=255)
     email               = models.EmailField(unique=True, max_length=255)
     is_active           = models.BooleanField(default=True)

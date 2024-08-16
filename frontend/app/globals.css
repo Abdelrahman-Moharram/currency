@@ -2,32 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.light {
+  --background: 239, 239, 241;
+
+  --border: 222, 221, 226;
+  --card: 251, 251, 251;
+
+  --copy-primary: 23, 23, 23;
+  --copy-secondary: 115, 115, 115;
+
+  --cta: 139, 92, 246;
+  --cta-active: 124, 58, 237;
+  --cta-text: 0, 0, 0;
+  border:rgba(border);
+
+  background: rgba(var(--background));
+  color: #000;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.dark {
+  --background:37, 35, 41;
+
+  --border: 62, 59, 69;
+  --card: 25, 24, 27;
+  /* #1E421D */
+
+  --copy-primary: 251, 251, 251;
+  --copy-secondary: 164, 159, 172;
+
+  --cta: 99, 102, 241;
+  --cta-active: 79, 70, 229;
+  --cta-text: 255, 255, 255;
+  border:rgba(border);
+  background: rgba(var(--background));
+  color: #FFF;
+
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.red {
+  --background: 254, 202, 202;
+
+  --border: 185, 28, 28;
+  --card: 239, 68, 68;
+
+  --copy-primary: 250, 250, 250;
+  --copy-secondary: 254, 226, 226;
+
+  --cta: 250, 250, 250;
+  --cta-active: 254, 226, 226;
+  --cta-text: 239, 68, 68;
+
+  background: rgba(var(--background));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+
+.default-shadow{
+  box-shadow: 0px 0px 5px rgba(var(--cta-text));
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }

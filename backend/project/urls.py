@@ -4,6 +4,7 @@ from project import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('', include('currency.urls', namespace='currency')),
     path('admin/', admin.site.urls),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_URL)
